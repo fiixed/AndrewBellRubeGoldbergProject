@@ -9,7 +9,7 @@ public class ControllerInputManager: MonoBehaviour {
     private GameObject ball;
     public Material outOfBounds;
     public Material inBounds;
-    public bool legalThrow = false;
+    public static bool legalThrow = false;
     private SteamVR_ControllerManager stvrcm;
     
 
@@ -100,7 +100,7 @@ public class ControllerInputManager: MonoBehaviour {
                     // aimer position
                     teleportAimerObject.transform.position = new Vector3(teleportLocation.x, teleportLocation.y, teleportLocation.z);
                 } else {
-                    teleportLocation = transform.position + transform.forward * 15;
+                    //teleportLocation = transform.position + transform.forward * 15;
                     RaycastHit groundRay;
                     if (Physics.Raycast(teleportLocation, -Vector3.up, out groundRay, 17, laserMask)) {
                         teleportLocation = new Vector3(transform.forward.x * 15 + transform.position.x, groundRay.point.y, transform.forward.z * 15 + transform.position.z);

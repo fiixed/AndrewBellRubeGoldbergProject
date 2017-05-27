@@ -32,13 +32,10 @@ public class BallReset : MonoBehaviour {
                 collectiblesCount = collectibles.Length;
             }
         }
-
-       
-
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.CompareTag("Collectible")) {
+        if (other.gameObject.CompareTag("Collectible") && ControllerInputManager.legalThrow) {
             other.gameObject.GetComponent<MeshRenderer>().enabled = false;
             if (collectiblesCount > 0) {
                 collectiblesCount--;

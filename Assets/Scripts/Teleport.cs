@@ -6,7 +6,7 @@ public class Teleport : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Throwable")) {
-            Debug.Log("collision");
+            //Debug.Log("collision");
             Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
             collision.gameObject.transform.position = new Vector3(
                 collision.gameObject.transform.position.x, collision.gameObject.transform.position.y + 2.9f,
